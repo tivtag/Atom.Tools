@@ -23,6 +23,10 @@ Shared library
 ### Atom Framework
 The Atom framework is provided AS IS without source code.
 
+### Ookii.Dialogs
+The Ookii.Dialogs library is used to provide a better Open Folder dialog experience. See Dependencies\Ookii.Dialogs License.txt
+
+
 ## Requirements
 * Microsoft XNA 4.x
 * Microsoft Code Contracts

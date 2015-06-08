@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonLabelClone" xml:space="preserve">
+    <value>Clone</value>
+  </data>
+  <data name="ButtonLabelPause" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="ButtonLabelPlay" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="ButtonLabelStop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="DesignMode" xml:space="preserve">
+    <value>Design Mode</value>
+  </data>
+  <data name="DialogInfoOverwriteOpenSpriteX" xml:space="preserve">
+    <value>The sprite '{0}' is already open. Overwrite it?</value>
+  </data>
+  <data name="DialogInfoOverwriteSpriteX" xml:space="preserve">
+    <value>A sprite already exists at '{0}'. Overwrite it?</value>
+  </data>
+  <data name="DialogTextSpritesSuccessfullySaved" xml:space="preserve">
+    <value>The sprite(s) have been successfully saved.</value>
+  </data>
+  <data name="DialogTitleOpenSprite" xml:space="preserve">
+    <value>Select the Sprites resources to open.</value>
+  </data>
+  <data name="DialogTitleOpenTextureAtlas" xml:space="preserve">
+    <value>Select the Texture Atlas resource to open.</value>
+  </data>
+  <data name="DialogTitleSpriteTexture" xml:space="preserve">
+    <value>Select the Texture resource to use.</value>
+  </data>
+  <data name="EditMode" xml:space="preserve">
+    <value>Edit Mode</value>
+  </data>
+  <data name="ErrorWhenTryingToLoadSpriteExisitingSpriteWasAnim" xml:space="preserve">
+    <value>An error occured when trying to load a Sprite. The existing Sprite was of type SpriteAnimation.</value>
+  </data>
+  <data name="FilterImageFiles" xml:space="preserve">
+    <value>Image Files (*.png;*.tga;*.jpg;*.bmp)|*.png;*.tga*.jpg;*.jpeg;*.bmp</value>
+  </data>
+  <data name="FilterSpriteFiles" xml:space="preserve">
+    <value>All Sprite Resources (*.spr;*.aspr)|*.spr;*.aspr|Sprites (.spr)|*.spr|Animated Sprites (.aspr)|*.aspr</value>
+  </data>
+  <data name="FilterSpriteOnly" xml:space="preserve">
+    <value>Sprites (*.spr)|*.spr</value>
+  </data>
+  <data name="FilterTextureFiles" xml:space="preserve">
+    <value>Image Files (*.png;*.tga;*.jpg;*.bmp)|*.png;*.tga*.jpg;*.jpeg;*.bmp|Compiled Binary XNA files (*.xnb)|*.xnb|All Files (*.*)|*.*"</value>
+  </data>
+  <data name="HeaderFrames" xml:space="preserve">
+    <value>Frames</value>
+  </data>
+  <data name="HeaderSelectedFrame" xml:space="preserve">
+    <value>Selected Frame</value>
+  </data>
+  <data name="HeaderSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="LabelAddFrame" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="LabelFrameOffset" xml:space="preserve">
+    <value>Offset</value>
+  </data>
+  <data name="LabelFrameSprite" xml:space="preserve">
+    <value>Sprite</value>
+  </data>
+  <data name="LabelFrameTime" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="LabelMoveFrameDown" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="LabelMoveFrameUp" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="LabelRemoveFrame" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="LabelSpriteAnimationLoopingState" xml:space="preserve">
+    <value>Is Looping</value>
+  </data>
+  <data name="LabelSpriteAnimationSpeed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="LabelSpriteColorTint" xml:space="preserve">
+    <value>Color Tint</value>
+  </data>
+  <data name="LabelSpriteEffects" xml:space="preserve">
+    <value>Effects</value>
+  </data>
+  <data name="LabelSpriteName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="LabelSpriteOrigin" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="LabelSpriteProperties" xml:space="preserve">
+    <value>Sprite Properties</value>
+  </data>
+  <data name="LabelSpriteRotation" xml:space="preserve">
+    <value>Rotation</value>
+  </data>
+  <data name="LabelSpriteScale" xml:space="preserve">
+    <value>Scale</value>
+  </data>
+  <data name="LabelSpriteSource" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="LabelSpriteTexture" xml:space="preserve">
+    <value>Texture</value>
+  </data>
+  <data name="MenuHeaderAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MenuHeaderAnimatedSprite" xml:space="preserve">
+    <value>Animated Sprite</value>
+  </data>
+  <data name="MenuHeaderExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="MenuHeaderFile" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="MenuHeaderHelp" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="MenuHeaderNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="MenuHeaderOpen" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="MenuHeaderOptions" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="MenuHeaderResetView" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="MenuHeaderSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="MenuHeaderSaveAll" xml:space="preserve">
+    <value>Save All</value>
+  </data>
+  <data name="MenuHeaderSaveSelected" xml:space="preserve">
+    <value>Save Selected</value>
+  </data>
+  <data name="MenuHeaderSprite" xml:space="preserve">
+    <value>Sprite</value>
+  </data>
+  <data name="MenuHeaderTextureAtlas" xml:space="preserve">
+    <value>Texture Atlas</value>
+  </data>
+  <data name="MenuHeaderTextureAtlasSpritesCentered" xml:space="preserve">
+    <value>Texture Atlas (Sprites Centered)</value>
+  </data>
+  <data name="MenuHeaderView" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="PathSprites" xml:space="preserve">
+    <value>Content\\Sprites\\</value>
+  </data>
+  <data name="PathTextures" xml:space="preserve">
+    <value>Content\\Textures\\</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QuestionReallyDeleteSelectedFrame" xml:space="preserve">
+    <value>Do you really want to delete the currently selected frame?</value>
+  </data>
+  <data name="TooltipSpriteColorTint" xml:space="preserve">
+    <value>The color the sprite is tinted in.
+The default value is White. (no tinting)</value>
+  </data>
+  <data name="TooltipSpriteEffects" xml:space="preserve">
+    <value>The effects applied when drawing the sprite.
+The default value is None.</value>
+  </data>
+  <data name="TooltipSpriteName" xml:space="preserve">
+    <value>The name of the sprite.
+A sprite is always saved under its name.</value>
+  </data>
+  <data name="TooltipSpriteOrigin" xml:space="preserve">
+    <value>The origin of the sprite.
+If the origin is set to the half size of the sprite,
+then the sprite will be rotated around its center when applying any rotation.
+The default value is (0; 0).</value>
+  </data>
+  <data name="TooltipSpriteRotation" xml:space="preserve">
+    <value>The rotation of the Sprite in degrees.
+The default value is 0.</value>
+  </data>
+  <data name="TooltipSpriteScale" xml:space="preserve">
+    <value>The scaling factor applied when drawing the sprite.
+The default value is (1; 1).</value>
+  </data>
+  <data name="TooltipSpriteSource" xml:space="preserve">
+    <value>The location of the sprite within the texture.</value>
+  </data>
+  <data name="TooltipSpriteTexture" xml:space="preserve">
+    <value>The texture that contains the sprite.
+A texture can contain multiple sprites
+by setting the Source value of the indivual sprites.</value>
+  </data>
+  <data name="TooltipSpriteTextureButton" xml:space="preserve">
+    <value>Click to set the texture of the sprite.</value>
+  </data>
+</root>

@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="Atom.Tools.SpriteTool.AnimatedSpritePropertyControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:aw="clr-namespace:Atom.Wpf.Controls;assembly=Atom.Wpf"
+    xmlns:awc="clr-namespace:Atom.Wpf.Converters;assembly=Atom.Wpf"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:xnag="clr-namespace:Microsoft.Xna.Framework.Graphics;assembly=Microsoft.Xna.Framework.Graphics"
+    xmlns:localp="clr-namespace:Atom.Tools.SpriteTool.Properties"
+    Background="{DynamicResource BrushDarkGrey}">
+    
+    <Grid Height="674">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*" />
+            <RowDefinition Height="208*" />
+            <RowDefinition Height="160*" />
+            <RowDefinition Height="114*" />
+            <RowDefinition Height="100*" />
+        </Grid.RowDefinitions>
+
+        <Label FontFamily="Orator Std" HorizontalAlignment="Center" Height="72"
+           VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Center" 
+           VerticalContentAlignment="Center" FontWeight="Bold" FontSize="16">
+            <Label.Content>
+                <TextBlock TextBlock.TextAlignment="Center">
+            Animated <LineBreak/> Sprite Properties
+                </TextBlock>
+            </Label.Content>
+        </Label>
+
+        <GroupBox Header="{x:Static localp:Resources.HeaderFrames}"
+              Foreground="White" Grid.Row="1" Height="208" VerticalAlignment="Top">
+            <Grid>
+                <ListBox KeyDown="OnFramesListBoxKeyDown" ItemsSource="{Binding Frames}" Margin="10,10,10,67">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Sprite.Name}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource BrushDarkGrey}"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="Red"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" Value="Black"/>
+
+                            <Setter Property="BorderBrush" Value="{StaticResource BrushDarkGrey}"/>
+                            <Setter Property="BorderThickness" Value="0.5"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+
+                </ListBox>
+
+                <Button Content="{x:Static localp:Resources.LabelAddFrame}" Command="{Binding AddFrame}" Width="100" Height="23" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Margin="10,0,0,38"/>
+                <Button Content="{x:Static localp:Resources.LabelRemoveFrame}" Command="{Binding RemoveSelectedFrame}" Width="100" Height="23" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,9"/>
+                <Button Content="{x:Static localp:Resources.LabelMoveFrameUp}" Command="{Binding MoveSelectedFrameUp}" Width="50" Height="23" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,10,38"/>
+                <Button Content="{x:Static localp:Resources.LabelMoveFrameDown}" Command="{Binding MoveSelectedFrameDown}" Width="50" Height="23" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,9"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="{x:Static localp:Resources.HeaderSelectedFrame}"
+              Foreground="White" Grid.Row="2" Margin="0,10,0,0" Height="150" VerticalAlignment="Top">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="28" />
+                    <RowDefinition Height="28" />
+                    <RowDefinition Height="60*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*" />
+                    <ColumnDefinition Width="146*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Command="{Binding SetSelectedFrameSprite}" Content="{x:Static localp:Resources.LabelFrameSprite}"
+                    Background="{DynamicResource BrushDarkGrey}" Foreground="White" Margin="2"/>
+                <TextBox Text="{Binding Path=SelectedFrame.Sprite, Mode=OneWay}" Grid.Column="1" Margin="8,3.02,9,1.98" Focusable="False" IsTabStop="False" />
+
+                <Label Content="{x:Static localp:Resources.LabelFrameTime}" FontSize="14" Foreground="White" 
+                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="1" />
+                <TextBox Text="{Binding Path=SelectedFrame.Time}" Grid.Column="1" Grid.Row="1" Margin="8,2,9,3"/>
+
+                <Label Content="{x:Static localp:Resources.LabelFrameOffset}" FontSize="14" Foreground="White" 
+                   VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2"/>
+                <aw:Vector2InputControl Value="{Binding Path=SelectedFrame.Offset, Mode=TwoWay}" Grid.Row="2" Height="60" VerticalAlignment="Top" Grid.Column="1" 
+                                        HorizontalAlignment="Left" Width="146" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="{x:Static localp:Resources.HeaderSettings}" 
+              Grid.Row="3" Margin="0,12,0,0" Foreground="White">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*" />
+                    <ColumnDefinition Width="146*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="28" />
+                    <RowDefinition Height="28" />
+                    <RowDefinition Height="28" />
+                </Grid.RowDefinitions>
+
+                <Label Content="{x:Static localp:Resources.LabelSpriteName}" FontSize="14" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <TextBox Text="{Binding Name}" FlowDirection="RightToLeft" Margin="2" Grid.Column="1" />
+
+                <Label Content="{x:Static localp:Resources.LabelSpriteAnimationSpeed}" FontSize="14" Foreground="White"
+                       HorizontalContentAlignment="Center" Grid.Row="1" />
+                <TextBox Text="{Binding AnimationSpeed}"
+                     Grid.Column="1" Margin="2" FlowDirection="RightToLeft" Grid.Row="1" />
+
+                <CheckBox Content="{x:Static localp:Resources.LabelSpriteAnimationLoopingState}" 
+                      IsChecked="{Binding IsLooping}"
+                      Grid.Row="2" IsThreeState="False" FlowDirection="RightToLeft"
+                      HorizontalContentAlignment="Center" FontSize="14" 
+                      Grid.ColumnSpan="2" Margin="0,2,0,1" Foreground="White" HorizontalAlignment="Left" Width="88" />
+            </Grid>
+        </GroupBox>
+        
+        <Button Command="{Binding Play}" Content="{x:Static localp:Resources.ButtonLabelPlay}" Grid.Row="4" HorizontalAlignment="Left"   Width="55" Margin="6,22,0,22" />
+        <Button Command="{Binding Stop}" Content="{x:Static localp:Resources.ButtonLabelStop}" Grid.Row="4" HorizontalAlignment="Center" Width="55" Height="55"/>
+        <Button Command="{Binding Pause}" Content="{x:Static localp:Resources.ButtonLabelPause}" Grid.Row="4" HorizontalAlignment="Right"  Width="55" Margin="0,22,6,22" />
+    </Grid>
+</UserControl>

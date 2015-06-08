@@ -1,0 +1,63 @@
+﻿<Window x:Class="Atom.Tools.SpriteTool.Database.CreateSpriteDatabaseDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:awc="clr-namespace:Atom.Wpf.Controls;assembly=Atom.Wpf"
+    Title="Create Sprite Database" Height="240" Width="250"
+    WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="225*" />            
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="1" Grid.Row="1" >
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="60*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            
+            <Label Content="Name:" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBox x:Name="textBoxName" Grid.Row="1" Grid.Column="1" Width="80" Margin="0,2" />
+            
+            <Label Content="Images:" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Button Content="Select Folder" 
+                    Grid.Row="3" Grid.Column="1"
+                    Width="80" Margin="2" Click="OnSelectInputFolderButtonClicked" />
+
+            <Label Content="Size:" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <awc:Vector2InputControl x:Name="atlasSize" X="512" Y="512"
+                                     Grid.Row="5" Grid.Column="1"
+                                     Foreground="Black"
+                                     Width="80" />
+            
+            <Label Content="Spacing:" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <awc:NumericUpDown x:Name="numericUpDownSpacing" Value="1"
+                               Grid.Row="7" Grid.Column="1"
+                               Width="80" />
+        </Grid>      
+        
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
+            <Button Content="Create" Click="OnCreateButtonClicked" Width="60" Margin="0,0,2,0" />
+            <Button Content="Cancel" Click="OnCancelButtonClicked" Grid.Column="1" Grid.Row="2" Width="60"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,122 @@
+﻿<Window x:Class=" Atom.Tools.SpriteSheetTool.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:swf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+    xmlns:swfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+    Title="Sprite Sheet Tool" Width="780" Height="628" ResizeMode="NoResize"
+    Background="{StaticResource BackgroundBrush}" Foreground="{StaticResource ForegroundBrush}" 
+    WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="SpriteSheetProvider" />
+
+        <Style x:Key="MainMenuItemStyle" TargetType="{x:Type MenuItem}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+                <Trigger Property="IsSubmenuOpen" Value="True">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+            <Setter Property="Padding" Value="10,2,10,0"/>
+            <Setter Property="Height" Value="20"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="520" />
+            <ColumnDefinition Width="238*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="556" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Menu Grid.ColumnSpan="2">
+            <Menu.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FF595959" Offset="0"/>
+                    <GradientStop Color="#FF333333" Offset="0.9"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Menu.Background>
+
+            <MenuItem Header="File" Style="{StaticResource MainMenuItemStyle}">
+                <MenuItem Header="New" Command="{Binding New}"/>
+                <MenuItem Header="Open" Command="{Binding Open}"/>
+                <Separator/>
+                <MenuItem Header="Save" Command="{Binding Save}"/>
+                <Separator/>
+                <MenuItem Header="Exit" Click="OnFileExitMenuItemClicked"/>
+            </MenuItem>
+
+
+            <MenuItem Header="View" Style="{StaticResource MainMenuItemStyle}">
+                <MenuItem Header="Zoom 2x" Command="{Binding ZoomView}"/>
+                <MenuItem Header="Reset" Command="{Binding ResetView}"/>
+            </MenuItem>
+            
+            <MenuItem Header="Tools" Style="{StaticResource MainMenuItemStyle}">
+                <MenuItem Header="Import (.sprsh xml)" Command="{Binding Import}" />
+            </MenuItem>
+        </Menu>
+
+        <swfi:WindowsFormsHost Name="xnaFormHost" KeyDown="OnKeyDown" Grid.Row="1">
+            <swf:PictureBox MouseClick="OnPictureBoxClicked" />
+        </swfi:WindowsFormsHost>
+
+        <!-- Sprite Sheet Panel -->
+        <Grid Grid.Row="1" Grid.Column="1" DataContext="{Binding SpriteSheet}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="24" />
+                <RowDefinition Height="24" />
+                <RowDefinition Height="383*" />
+                <RowDefinition Height="93*" />
+            </Grid.RowDefinitions>
+
+            <Label Content="Sprite Sheet" Foreground="{StaticResource ForegroundBrush}"
+                   FontSize="16"
+                   HorizontalContentAlignment="Center" VerticalContentAlignment="Top" />
+            <TextBox Text="{Binding Name}" Grid.Row="1" Margin="12,0,13,0" TextAlignment="Center" />
+
+            <!-- Sprite List -->
+            <ListBox x:Name="listBoxSprites" ItemsSource="{Binding Sprites}" SelectionMode="Single"
+                     Grid.Row="3" Margin="12,0,13,12">
+                <ListBox.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Orange" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Orange" />
+                </ListBox.Resources>
+
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.Setters>
+                                    <Setter Property="Background" Value="Gray" />
+                                    <Setter Property="Foreground" Value="White" />
+                                </Trigger.Setters>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Name}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Button Content="Add" Command="{Binding AddSprites}" Grid.Row="4" Margin="92,12,0,26" HorizontalAlignment="Left" Width="149" />
+            <Button Content="Remove" Command="{Binding RemoveSelectedSprite}" Grid.Row="4" Margin="92,0,13,0" Height="24" VerticalAlignment="Bottom" />
+            <Button Content="Move Up" Command="{Binding MoveSelectedSpriteUp}" Grid.Row="4" Margin="12,12,0,0" HorizontalAlignment="Left" Width="75" Height="39.391" VerticalAlignment="Top" />
+            <Button Content="Move Down" Command="{Binding MoveSelectedSpriteDown}" Grid.Row="4" Margin="12,0,0,0.519" HorizontalAlignment="Left" Width="75" Height="39" VerticalAlignment="Bottom" />
+            <!-- <Button Content="Add D" Command="{Binding AddDummySprite}" Grid.Row="4"  Margin="180,12,13,26" /> -->
+        </Grid>
+    </Grid>
+</Window>

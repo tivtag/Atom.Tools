@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sprite Sheet", "Sprite Sheet", "{C2389827-BAC8-4B31-92A7-4DC3CF71681A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sprite", "Sprite", "{8A513F88-69AB-4274-B1BE-8AE1444D7E6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpriteTool", "SpriteTool\SpriteTool.csproj", "{3CFFA5FB-A60C-4AC9-BE6B-727650EB6335}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpriteTool.Library", "SpriteTool.Library\SpriteTool.Library.csproj", "{414F23F1-6938-47D6-B774-4195D094465D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpriteTool.AtlasBatcher", "SpriteTool.AtlasBatcher\SpriteTool.AtlasBatcher.csproj", "{511E6E26-46A4-4EE1-8477-0E23636CFF33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpriteSheetTool", "SpriteSheetTool\SpriteSheetTool.csproj", "{B8E574EF-403C-41AF-9986-3C1DE922361D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tile", "Tile", "{E9A78026-E4E7-4511-BEAB-5351ED8069B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileExtractionTool", "TileExtractionTool\TileExtractionTool.csproj", "{70042507-638E-4DB7-AFFC-1D1E2CC5AC1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CFFA5FB-A60C-4AC9-BE6B-727650EB6335}.Debug|x86.ActiveCfg = Debug|x86
+		{3CFFA5FB-A60C-4AC9-BE6B-727650EB6335}.Debug|x86.Build.0 = Debug|x86
+		{3CFFA5FB-A60C-4AC9-BE6B-727650EB6335}.Release|x86.ActiveCfg = Release|x86
+		{3CFFA5FB-A60C-4AC9-BE6B-727650EB6335}.Release|x86.Build.0 = Release|x86
+		{414F23F1-6938-47D6-B774-4195D094465D}.Debug|x86.ActiveCfg = Debug|x86
+		{414F23F1-6938-47D6-B774-4195D094465D}.Debug|x86.Build.0 = Debug|x86
+		{414F23F1-6938-47D6-B774-4195D094465D}.Release|x86.ActiveCfg = Release|x86
+		{414F23F1-6938-47D6-B774-4195D094465D}.Release|x86.Build.0 = Release|x86
+		{511E6E26-46A4-4EE1-8477-0E23636CFF33}.Debug|x86.ActiveCfg = Debug|x86
+		{511E6E26-46A4-4EE1-8477-0E23636CFF33}.Debug|x86.Build.0 = Debug|x86
+		{511E6E26-46A4-4EE1-8477-0E23636CFF33}.Release|x86.ActiveCfg = Release|x86
+		{511E6E26-46A4-4EE1-8477-0E23636CFF33}.Release|x86.Build.0 = Release|x86
+		{B8E574EF-403C-41AF-9986-3C1DE922361D}.Debug|x86.ActiveCfg = Debug|x86
+		{B8E574EF-403C-41AF-9986-3C1DE922361D}.Debug|x86.Build.0 = Debug|x86
+		{B8E574EF-403C-41AF-9986-3C1DE922361D}.Release|x86.ActiveCfg = Release|x86
+		{B8E574EF-403C-41AF-9986-3C1DE922361D}.Release|x86.Build.0 = Release|x86
+		{70042507-638E-4DB7-AFFC-1D1E2CC5AC1E}.Debug|x86.ActiveCfg = Debug|x86
+		{70042507-638E-4DB7-AFFC-1D1E2CC5AC1E}.Debug|x86.Build.0 = Debug|x86
+		{70042507-638E-4DB7-AFFC-1D1E2CC5AC1E}.Release|x86.ActiveCfg = Release|x86
+		{70042507-638E-4DB7-AFFC-1D1E2CC5AC1E}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B8E574EF-403C-41AF-9986-3C1DE922361D} = {C2389827-BAC8-4B31-92A7-4DC3CF71681A}
+		{3CFFA5FB-A60C-4AC9-BE6B-727650EB6335} = {8A513F88-69AB-4274-B1BE-8AE1444D7E6F}
+		{414F23F1-6938-47D6-B774-4195D094465D} = {8A513F88-69AB-4274-B1BE-8AE1444D7E6F}
+		{511E6E26-46A4-4EE1-8477-0E23636CFF33} = {8A513F88-69AB-4274-B1BE-8AE1444D7E6F}
+		{70042507-638E-4DB7-AFFC-1D1E2CC5AC1E} = {E9A78026-E4E7-4511-BEAB-5351ED8069B2}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal
